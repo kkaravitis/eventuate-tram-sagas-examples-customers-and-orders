@@ -26,6 +26,11 @@ public class OrderService {
     this.createOrderSaga = createOrderSaga;
   }
 
+  /**
+   * The createOrder() method creates the CreateOrderSaga and then retrieves and returns the Order created by the first step of the saga.
+   * @param orderDetails
+   * @return
+   */
   @Transactional
   public Order createOrder(OrderDetails orderDetails) {
     CreateOrderSagaData data = new CreateOrderSagaData(orderDetails);
